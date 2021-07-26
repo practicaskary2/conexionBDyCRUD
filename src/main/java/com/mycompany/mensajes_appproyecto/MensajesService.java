@@ -17,10 +17,10 @@ public class MensajesService {
         //Esta información se le pasará a la capa MensajesDAO.java para que ejecute las sentencias SQL
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("Escribe tu mensaje");
+        System.out.println("Escribe tu mensaje:");
         String mensaje = sc.nextLine();
         
-        System.out.println("Escribe nombre del autor");
+        System.out.println("Escribe nombre del autor:");
         String nombre = sc.nextLine();
         
         Mensajes registro = new Mensajes();
@@ -39,6 +39,16 @@ public class MensajesService {
     }
     
     public static void borrarMensaje(){
+        
+        //Esta información se le pasará a la capa MensajesDAO.java para que ejecute las sentencias SQL
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Escribe el número de ID del mensaje a eliminar:");
+        int id_numero = sc.nextInt();
+           
+        Mensajes registro = new Mensajes();      
+        //Pasar la información a la capa MensajesDAO
+        MensajesDAO.borrarMensajeDB(id_numero);
         
     }
     
