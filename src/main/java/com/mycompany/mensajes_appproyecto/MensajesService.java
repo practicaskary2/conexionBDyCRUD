@@ -33,6 +33,8 @@ public class MensajesService {
     }
     
     public static void leerMensajes(){
+        //Pasar la información a la capa MensajesDAO
+        MensajesDAO.leerMensajesDB();
         
     }
     
