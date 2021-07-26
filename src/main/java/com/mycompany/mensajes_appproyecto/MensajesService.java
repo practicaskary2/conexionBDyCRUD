@@ -54,6 +54,22 @@ public class MensajesService {
     
     public static void editarMensaje(){
         
+        //Esta información se le pasará a la capa MensajesDAO.java para que ejecute las sentencias SQL
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Escribe tu nuevo mensaje:");
+        String mensaje = sc.nextLine();
+        
+        System.out.println("Escribe el número de ID del mensaje que quieres actualizar: ");
+        int id_numero = sc.nextInt();
+         
+        Mensajes actualizacion = new Mensajes();
+        actualizacion.setId_mensaje(id_numero);
+        actualizacion.setMensaje(mensaje);
+        
+        //Pasar la información a la capa MensajesDAO
+        MensajesDAO.actualizarMensajeDB(actualizacion);
+        
     }
     
 }
